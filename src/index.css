@@ -1,0 +1,60 @@
+#root {
+  width: 100vw;
+  height: 100vh;
+  --b: 2%; /* line thickness */
+  --s: 60px; /* size */
+
+  @media (prefers-color-scheme: light) {
+    --c: #fff 75%, #000000 0;
+  }
+  --c: #0000 75%, #ffffff11 0;
+  --p1: from -90deg at calc(50% + var(--b)) calc(100% - var(--b));
+  --p2: from -90deg at var(--b) calc(50% - var(--b));
+  --e: calc(var(--s) / 2);
+  --e-: calc(var(--s) / -2);
+
+  background: conic-gradient(var(--p1), var(--c)),
+    conic-gradient(var(--p1), var(--c)), conic-gradient(var(--p2), var(--c)),
+    conic-gradient(var(--p2), var(--c)), #111;
+  background-size: var(--s) var(--s);
+  animation: g8 10s infinite;
+}
+
+@keyframes g8 {
+  0%,
+  2% {
+    background-position: 0 0, var(--e) var(--e), 0 0, var(--e) var(--e);
+  }
+  10%,
+  15% {
+    background-position: 0 0, var(--e) var(--e), 0 var(--e), var(--e) 0;
+  }
+  22.5%,
+  27.5% {
+    background-position: var(--e) 0, 0 var(--e), 0 var(--e), var(--e) 0;
+  }
+  35%,
+  40% {
+    background-position: var(--e) 0, 0 var(--e), 0 0, var(--e) var(--e-);
+  }
+  47.5%,
+  52.5% {
+    background-position: 0 0, var(--e-) var(--e), 0 0, var(--e) var(--e-);
+  }
+  60%,
+  65% {
+    background-position: 0 0, var(--e-) var(--e), 0 var(--e-), var(--e) 0;
+  }
+  72.5%,
+  77.5% {
+    background-position: var(--e-) 0, 0 var(--e), 0 var(--e-), var(--e) 0;
+  }
+  85%,
+  90% {
+    background-position: var(--e-) 0, 0 var(--e), 0 0, var(--e) var(--e);
+  }
+  98%,
+  100% {
+    background-position: 0 0, var(--e) var(--e), 0 0, var(--e) var(--e);
+  }
+}
