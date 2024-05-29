@@ -3,10 +3,6 @@
   height: 100vh;
   --b: 2%; /* line thickness */
   --s: 60px; /* size */
-
-  @media (prefers-color-scheme: light) {
-    --c: #fff 75%, #000000 0;
-  }
   --c: #0000 75%, #ffffff11 0;
   --p1: from -90deg at calc(50% + var(--b)) calc(100% - var(--b));
   --p2: from -90deg at var(--b) calc(50% - var(--b));
@@ -18,6 +14,10 @@
     conic-gradient(var(--p2), var(--c)), #111;
   background-size: var(--s) var(--s);
   animation: g8 10s infinite;
+
+  @media (prefers-color-scheme: light) {
+    --c: #fff 75%, #00000033 0;
+  }
 }
 
 @keyframes g8 {
